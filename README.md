@@ -1,4 +1,5 @@
-# Jogo simples do gênero 'Space Shooter' desenvolvido por:
+## Jogo simples do gênero 'Space Shooter' realizado em C++ utilizando a biblioteca "raylib.h"
+# Desenvolvido por:
 - Giulia Vante
 - Marco Moro
 - Nicolas de Antoni

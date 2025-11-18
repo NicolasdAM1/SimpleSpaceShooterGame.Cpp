@@ -47,7 +47,7 @@ int main() {
     base.x = 0;
     base.y = 900 - base.height;
 
-    // ⭐ CÉU ESTRELADO
+    // CÉU ESTRELADO
     const int STAR_COUNT = 100;
     Vector2 stars[STAR_COUNT];
     for (int i = 0; i < STAR_COUNT; i++) {
@@ -57,7 +57,7 @@ int main() {
         };
     }
 
-    // ---- CARREGA A IMAGEM DA BASE ----
+    // CARREGA A IMAGEM DA BASE
     Texture2D baseTexture = LoadTexture("nave_base.png");
     Texture2D meteoro = LoadTexture("meteoro.png");
 
@@ -76,21 +76,20 @@ int main() {
         destBase.height
     };
 
-    // 🔫 MUNIÇÃO
+    //  MUNIÇÃO
     int ammo = 12;
     const int maxAmmo = 12;
     float reloadTimer = 0.0f;
     float reloadInterval = 0.5f;
 
-    // 🛸 CARREGA A NAVE DO JOGADOR
+    // CARREGA A NAVE DO JOGADOR
     Texture2D nave = LoadTexture("nave.png");
 
     while (!WindowShouldClose()) {
         float dt = GetFrameTime();
 
-        // ----------------------------
-        // 🎬 TELA INICIAL NOVA
-        // ----------------------------
+        // TELA INICIAL NOVA
+
         if (showStartMessage) {
 
             BeginDrawing();
@@ -126,9 +125,7 @@ int main() {
             continue; // não deixa o jogo rodar até ENTER
         }
 
-        // ----------------------------
         //        LÓGICA DO JOGO
-        // ----------------------------
         if (!gameOver) {
             // Movimento do player
             if (IsKeyDown(KEY_LEFT))  player.x -= playerSpeed * dt;
@@ -150,7 +147,7 @@ int main() {
                 ammo--;
             }
 
-            // RECARGA
+            // RECARREGAR
             reloadTimer += dt;
             if (reloadTimer >= reloadInterval) {
                 reloadTimer = 0;
@@ -234,9 +231,7 @@ int main() {
             gameOver = false;
         }
 
-        // ----------------------------
         //         DESENHO
-        // ----------------------------
         BeginDrawing();
         ClearBackground(BLACK);
 
@@ -247,9 +242,7 @@ int main() {
         // Base com imagem
         DrawTexturePro(baseTexture, srcBase, destBase, {0,0}, 0, WHITE);
 
-        // ----------------------------
         //     DESENHA A NAVE NOVA
-        // ----------------------------
         // ---- NAVE MAIOR (96x96) ----
         float naveSize = 80;  // deixe 80 se quiser menor
 
