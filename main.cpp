@@ -52,6 +52,8 @@ int main() {
     int score = 0;
     int lives = 3;
 
+    bool hasTakenDamage = false;
+
     float shootCooldown = 0.25f;
     float shootTimer = 0;
 
@@ -116,9 +118,6 @@ int main() {
             popup.timer = popup.duration;
         }
     };
-
-    // VARIAVEIS DE CONTROLE DO JOGO
-     bool hasTakenDamage = false;
 
     while (!WindowShouldClose()) {
         float dt = GetFrameTime();
